@@ -19,7 +19,7 @@ exports.index = function(req, res) {
             });            
         }, 
         book_instance_available_count: (callback) => {
-            sequelize.query("SELECT COUNT(id) AS count FROM book_INSTANCE " + 
+            sequelize.query("SELECT COUNT(id) AS count FROM book_instance " + 
                 "WHERE status='Available'", 
                 { type: sequelize.QueryTypes.SELECT}).then(results => {
                     callback(null, results[0].count)
